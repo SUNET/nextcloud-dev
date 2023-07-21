@@ -28,8 +28,12 @@ services:
     volumes:
       - ./garage/garage.toml:/etc/garage.toml
       - ./garage/data:/var/lib/garage/data
+      - ./garage/bin/ash:/bin/ash
       - ./garage/meta:/var/lib/garage/meta
       - ./garage/scripts/entrypoint.sh:/entrypoint.sh
+    entrypoint:
+      - /bin/ash
+      - /entrypoint.sh
   mariadb:
     image: mariadb
     container_name: mariadb
