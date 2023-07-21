@@ -31,7 +31,10 @@ services:
       - ./garage/bin/busybox:/bin/busybox
       - ./garage/meta:/var/lib/garage/meta
       - ./garage/scripts/entrypoint.sh:/entrypoint.sh
-    entrypoint:
+    environment:
+      S3_KEY: EJ39ITYZEUH5BGWDRUFY
+      S3_SECRET: M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj
+    command:
       - /bin/busybox
       - sh
       - /entrypoint.sh
