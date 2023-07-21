@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   nextcloud:
     container_name: nextcloud
@@ -78,16 +78,17 @@ services:
     command: redis-server --loglevel warning
   keycloak:
     container_name: keycloak
-    image: quay.io/keycloak/keycloak:legacy
+    image: quay.io/keycloak/keycloak:latest
     environment:
       DB_VENDOR: MYSQL
       DB_ADDR: mariadb
       DB_DATABASE: keycloak
       DB_USER: keycloak
       DB_PASSWORD: keycloak
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
       - 8080:8080
     depends_on:
       - mariadb
+    command: start-dev
