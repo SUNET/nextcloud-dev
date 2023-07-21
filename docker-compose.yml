@@ -27,6 +27,9 @@ services:
     restart: unless-stopped
     volumes:
       - ./garage/garage.toml:/etc/garage.toml
+      - ./garage/data:/var/lib/garage/data
+      - ./garage/meta:/var/lib/garage/meta
+      - ./garage/scripts/entrypoint.sh:/entrypoint.sh
   mariadb:
     image: mariadb
     container_name: mariadb
@@ -37,5 +40,6 @@ services:
       MYSQL_PASSWORD: nextcloud
     volumes:
       - ./mariadb/init.d:/docker-entrypoint-initdb.d
+      - ./mariadb/data:/var/lib/mysql
     ports:
       - "3306:3306"
