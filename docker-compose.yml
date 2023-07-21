@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  nextcloud:
+    privileged: true
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_ADMIN
+    image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
+    ports:
+      - "8000:80"
+    volumes:
+      - ./config:/config
+      - ./data:/data
+      - ./local_apps:/local_apps
+      - ./scripts:/scripts
+      - /dev/fuse:/dev/fuse
+    entrypoint:
+      - /scripts/entrypoint.sh
+    command:
+      - apache2-foreground
