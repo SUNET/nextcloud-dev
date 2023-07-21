@@ -30,7 +30,7 @@ services:
     ports:
       - 8001:80
     volumes:
-      - ./gss/config:/config
+      - ./gss/config:/var/www/html/config
     environment:
       INSTANCEID: ocv97i5mvjzf
       JWT_KEY: RoafObyacMagwemNihinabewegdyotjienPicKac
