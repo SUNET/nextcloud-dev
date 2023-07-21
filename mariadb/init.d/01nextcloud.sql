@@ -3,6 +3,7 @@
 -- Host: localhost    Database: nextcloud
 -- ------------------------------------------------------
 -- Server version	11.0.2-MariaDB-1:11.0.2+maria~ubu2204
+USE nextcloud;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

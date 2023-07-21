@@ -1,3 +1,3 @@
-create database gss if not exists;
-create user 'gss'@'%' identified by 'gss' if not exists;
+create database if not exists gss;
+create user if not exists 'gss'@'%' identified by 'gss';
 grant all on gss.* to 'gss'@'%';
