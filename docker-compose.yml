@@ -36,6 +36,6 @@ services:
       MYSQL_USER: nextcloud
       MYSQL_PASSWORD: nextcloud
     volumes:
-      - ./mariadb/init:/docker-entrypoint-initdb.d
+      - ./mariadb/init.d:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
