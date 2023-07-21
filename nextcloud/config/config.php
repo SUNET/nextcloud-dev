@@ -66,4 +66,15 @@ $CONFIG = array (
     ),
   ),
   'datadirectory' => '/var/www/html/data',
+  'gs.enabled' => 'true',
+  'gs.federation' => 'global',
+  'gs.trustedHosts' => ['*'],
+  'gss.jwt.key' => getenv('JWT_KEY'),
+  'gss.master.admin' =>
+   array (
+    0 => 'admin',
+  ),
+  'gss.master.url' => 'http://localhost:8001',
+  'gss.mode' => 'slave',
+  'gss.username_format' => 'sanitize',
 );

@@ -12,11 +12,12 @@ services:
       - ./nextcloud/scripts:/scripts
       - /dev/fuse:/dev/fuse
     environment:
+      INSTANCEID: octoue9ym05u
+      JWT_KEY: RoafObyacMagwemNihinabewegdyotjienPicKac
       MYSQL_PASSWORD: nextcloud
+      PASSWORDSALT: hzmRixRvv/EfSSPNaW4rzJb3HuNqaW
       S3_KEY: EJ39ITYZEUH5BGWDRUFY
       S3_SECRET: M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj
-      INSTANCEID: octoue9ym05u
-      PASSWORDSALT: hzmRixRvv/EfSSPNaW4rzJb3HuNqaW
       SECRET: rvYyvVajC9W07ncVDwEWGYp/bLczQkMl/kmzLlrEl5d288sg
     entrypoint:
       - /scripts/entrypoint.sh
@@ -31,8 +32,9 @@ services:
     volumes:
       - ./gss/config:/config
     environment:
-      MYSQL_PASSWORD: gss
       INSTANCEID: ocv97i5mvjzf
+      JWT_KEY: RoafObyacMagwemNihinabewegdyotjienPicKac
+      MYSQL_PASSWORD: gss
       PASSWORDSALT: TxBvoYLatUxpP76k/eI3RIxmQqffUy
       SECRET: NqYBemdyPKfmWRpBeH9jRsKNI3pGJpBc9SaJs8j1YvXycAJw
   garage:
