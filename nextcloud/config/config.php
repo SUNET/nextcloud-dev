@@ -1,7 +1,14 @@
 <?php
 $CONFIG = array (
   'htaccess.RewriteBase' => '/',
+  'memcache.distributed' => '\\OC\\Memcache\\Redis',
   'memcache.local' => '\\OC\\Memcache\\APCu',
+  'memcache.locking' => '\\OC\\Memcache\\Redis',
+  'redis' =>
+    array (
+      'host' => 'redis',
+      'port' => 6379,
+    ),
   'apps_paths' => 
   array (
     0 => 

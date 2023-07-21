@@ -3,10 +3,6 @@ services:
   nextcloud:
     container_name: nextcloud
     privileged: true
-    security_opt:
-      - apparmor:unconfined
-    cap_add:
-      - SYS_ADMIN
     image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
     ports:
       - 8000:80
@@ -58,3 +54,10 @@ services:
       - ./mariadb/data:/var/lib/mysql
     ports:
       - "3306:3306"
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    command: redis-server --loglevel warning
