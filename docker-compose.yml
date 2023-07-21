@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   nextcloud:
+    container_name: nextcloud
     privileged: true
     security_opt:
       - apparmor:unconfined
@@ -8,14 +9,26 @@ services:
       - SYS_ADMIN
     image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
     ports:
-      - "8000:80"
+      - 8000:80
     volumes:
-      - ./config:/config
-      - ./data:/data
-      - ./local_apps:/local_apps
-      - ./scripts:/scripts
+      - ./nextcloud/config:/config
+      - ./nextcloud/data:/data
+      - ./nextcloud/local_apps:/local_apps
+      - ./nextcloud/scripts:/scripts
       - /dev/fuse:/dev/fuse
     entrypoint:
       - /scripts/entrypoint.sh
     command:
       - apache2-foreground
+  garage:
+    container_name: garage
+    image: dxflrs/garage:v0.8.0
+    ports:
+      - 3900:3900
+      - 3901:3901
+      - 3902:3902
+    restart: unless-stopped
+    volumes:
+      - ./garage/data:/var/lib/garage/data
+      - ./garage/garage.toml:/etc/garage.toml
+      - ./garage/meta:/var/lib/garage/meta
