@@ -6,8 +6,8 @@ garage="/garage"
 key='EJ39ITYZEUH5BGWDRUFY'
 secret='M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj'
 
-id=$(docker exec garage /garage status | tail -1 |awk '{print $1}')
-version=$(docker exec garage /garage layout show | grep "Current cluster layout version" | awk -F ':' '{print $2}' | sed 's/\s//')
+id=$(${garage} /garage status | /bin/busybox tail -1 |/bin/busybox awk '{print $1}')
+version=$(${garage} layout show | /bin/busybox grep "Current cluster layout version" | /bin/busybox awk -F ':' '{print $2}' | /bin/busybox sed 's/\s//')
 ${garage} layout assign "${id}" -z nextcloud -c 10 -t docker
 ${garage} layout apply --version $(( version + 1 ))
 ${garage} layout show
