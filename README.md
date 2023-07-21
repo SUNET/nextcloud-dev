@@ -1,7 +1,7 @@
 # nextcloud-dev
 
 This is the SUNET nextcloud-custom container, running locally on port 8000 using
-sqlite.
+mariadb and garage for s3 storage.
 
 There is one user, 'admin' with the password 'admin'.
 

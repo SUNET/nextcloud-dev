@@ -23,9 +23,9 @@ $CONFIG = array (
       'writable' => true,
     ),
   ),
-  'instanceid' => 'octoue9ym05u',
-  'passwordsalt' => 'hzmRixRvv/EfSSPNaW4rzJb3HuNqaW',
-  'secret' => 'rvYyvVajC9W07ncVDwEWGYp/bLczQkMl/kmzLlrEl5d288sg',
+  'instanceid' => getenv('INSTANCEID'),
+  'passwordsalt' => getenv('PASSWORDSALT'),
+  'secret' => getenv('SECRET'), 
   'trusted_domains' => 
   array (
     0 => 'localhost:8000',
@@ -33,7 +33,7 @@ $CONFIG = array (
   'dbtype' => 'mysql',
   'dbhost' => 'mariadb',
   'dbname' => 'nextcloud',
-  'dbpassword' => 'nextcloud',
+  'dbpassword' => getenv('MYSQL_PASSWORD'),
   'dbport' => '3306',
   'dbtableprefix' => 'oc_',
   'dbuser' => 'nextcloud',
@@ -50,8 +50,8 @@ $CONFIG = array (
     array (
       'bucket' => 'nextcloud',
       'hostname' => 'garage',
-      'key' => 'EJ39ITYZEUH5BGWDRUFY',
-      'secret' => 'M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj',
+      'key' => getenv('S3_KEY'),
+      'secret' => getenv('S3_SECRET'),
       'port' => 3900,
       'region' => 'garage',
       'use_path_style' => true,

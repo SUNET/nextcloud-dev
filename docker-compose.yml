@@ -15,6 +15,13 @@ services:
       - ./nextcloud/local_apps:/local_apps
       - ./nextcloud/scripts:/scripts
       - /dev/fuse:/dev/fuse
+    environment:
+      MYSQL_PASSWORD: nextcloud
+      S3_KEY: EJ39ITYZEUH5BGWDRUFY
+      S3_SECRET: M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj
+      INSTANCEID: octoue9ym05u
+      PASSWORDSALT: hzmRixRvv/EfSSPNaW4rzJb3HuNqaW
+      SECRET: rvYyvVajC9W07ncVDwEWGYp/bLczQkMl/kmzLlrEl5d288sg
     entrypoint:
       - /scripts/entrypoint.sh
     command:
