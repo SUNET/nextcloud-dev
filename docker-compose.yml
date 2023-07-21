@@ -22,6 +22,19 @@ services:
       - /scripts/entrypoint.sh
     command:
       - apache2-foreground
+  gss:
+    container_name: gss
+    privileged: true
+    image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
+    ports:
+      - 8001:80
+    volumes:
+      - ./gss/config:/config
+    environment:
+      MYSQL_PASSWORD: gss
+      INSTANCEID: ocv97i5mvjzf
+      PASSWORDSALT: TxBvoYLatUxpP76k/eI3RIxmQqffUy
+      SECRET: NqYBemdyPKfmWRpBeH9jRsKNI3pGJpBc9SaJs8j1YvXycAJw
   garage:
     container_name: garage
     image: dxflrs/garage:v0.8.0
