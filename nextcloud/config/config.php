@@ -24,18 +24,33 @@ $CONFIG = array (
     ),
   ),
   'instanceid' => 'octoue9ym05u',
-  'passwordsalt' => 'MMxDEbVwf5ALYo+PkMMPwNeS6+TRZC',
-  'secret' => 'FIJqZANy0PFNxZsskgnLTKvaEy4PkHEcNsSqyF6zePQ8ekgV',
+  'passwordsalt' => 'hzmRixRvv/EfSSPNaW4rzJb3HuNqaW',
+  'secret' => 'rvYyvVajC9W07ncVDwEWGYp/bLczQkMl/kmzLlrEl5d288sg',
   'trusted_domains' => 
   array (
     0 => 'localhost:8000',
   ),
-  'datadirectory' => '/var/www/html/data',
   'dbtype' => 'sqlite3',
   'version' => '26.0.3.3',
   'overwrite.cli.url' => 'http://localhost:8000',
-  'installed' => true,
+  'installed' => false,
   'theme' => '',
   'loglevel' => 2,
   'maintenance' => false,
+  'objectstore' => 
+  array (
+    'class' => '\\OC\\Files\\ObjectStore\\S3',
+    'arguments' => 
+    array (
+      'bucket' => 'nextcloud',
+      'hostname' => 'garage',
+      'key' => 'EJ39ITYZEUH5BGWDRUFY',
+      'secret' => 'M5MrXTRjkyMaxXPe2FRXMTfTfbKEnZCu+7uRTVSj',
+      'port' => 3900,
+      'region' => 'garage',
+      'use_path_style' => true,
+      'use_ssl' => false,
+    ),
+  ),
+  'datadirectory' => '/var/www/html/data',
 );
