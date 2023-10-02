@@ -3,7 +3,7 @@ services:
   nextcloud:
     container_name: nextcloud
     privileged: true
-    image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
+    image: docker.sunet.se/drive/nextcloud-custom:26.0.7.1-2
     ports:
       - 8000:80
     volumes:
@@ -26,7 +26,7 @@ services:
   gss:
     container_name: gss
     privileged: true
-    image: docker.sunet.se/drive/nextcloud-custom:26.0.3.3-4
+    image: docker.sunet.se/drive/nextcloud-custom:26.0.7.1-2
     ports:
       - 8001:80
     volumes:

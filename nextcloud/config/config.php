@@ -1,14 +1,15 @@
 <?php
 $CONFIG = array (
+  'config_is_read_only' => false,
   'htaccess.RewriteBase' => '/',
   'memcache.distributed' => '\\OC\\Memcache\\Redis',
   'memcache.local' => '\\OC\\Memcache\\APCu',
   'memcache.locking' => '\\OC\\Memcache\\Redis',
-  'redis' =>
-    array (
-      'host' => 'redis',
-      'port' => 6379,
-    ),
+  'redis' => 
+  array (
+    'host' => 'redis',
+    'port' => 6379,
+  ),
   'apps_paths' => 
   array (
     0 => 
@@ -44,7 +45,7 @@ $CONFIG = array (
   'dbport' => '3306',
   'dbtableprefix' => 'oc_',
   'dbuser' => 'nextcloud',
-  'version' => '26.0.3.3',
+  'version' => '26.0.7.1',
   'overwrite.cli.url' => 'http://localhost:8000',
   'installed' => true,
   'theme' => '',
